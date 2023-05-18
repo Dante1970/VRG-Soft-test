@@ -7,25 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7D1179412CF58974B105CA3 /* Pods_VRG_Soft_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA783AF1B1DCA1C5354D81FE /* Pods_VRG_Soft_Test.framework */; };
+		BE13641C2A13854C00096C2C /* MostEmailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13641B2A13854C00096C2C /* MostEmailedViewController.swift */; };
+		BE13641E2A13858A00096C2C /* MostSharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13641D2A13858A00096C2C /* MostSharedViewController.swift */; };
+		BE1364202A1385B400096C2C /* MostViewedViewedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13641F2A1385B400096C2C /* MostViewedViewedController.swift */; };
+		BE1364222A13863000096C2C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1364212A13863000096C2C /* FavoritesViewController.swift */; };
+		BE1364252A138A2600096C2C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1364242A138A2600096C2C /* TabBarController.swift */; };
+		BE1364272A13E2CD00096C2C /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1364262A13E2CD00096C2C /* ApiManager.swift */; };
+		BE13642B2A13E7D200096C2C /* ArticlesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13642A2A13E7D200096C2C /* ArticlesResult.swift */; };
+		BE13642E2A14125800096C2C /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13642D2A14125800096C2C /* ArticleTableViewCell.swift */; };
+		BE1364302A154E1E00096C2C /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13642F2A154E1E00096C2C /* ArticleDetailViewController.swift */; };
 		BE2D222D2A1366B8000B48B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2D222C2A1366B8000B48B6 /* AppDelegate.swift */; };
 		BE2D222F2A1366B8000B48B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2D222E2A1366B8000B48B6 /* SceneDelegate.swift */; };
-		BE2D22312A1366B8000B48B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2D22302A1366B8000B48B6 /* ViewController.swift */; };
-		BE2D22342A1366B8000B48B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE2D22322A1366B8000B48B6 /* Main.storyboard */; };
 		BE2D22372A1366B8000B48B6 /* VRG_Soft_Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE2D22352A1366B8000B48B6 /* VRG_Soft_Test.xcdatamodeld */; };
 		BE2D22392A1366B9000B48B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE2D22382A1366B9000B48B6 /* Assets.xcassets */; };
 		BE2D223C2A1366B9000B48B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE2D223A2A1366B9000B48B6 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80566FC8C6D96163F143458B /* Pods-VRG Soft Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VRG Soft Test.debug.xcconfig"; path = "Target Support Files/Pods-VRG Soft Test/Pods-VRG Soft Test.debug.xcconfig"; sourceTree = "<group>"; };
+		BE13641B2A13854C00096C2C /* MostEmailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostEmailedViewController.swift; sourceTree = "<group>"; };
+		BE13641D2A13858A00096C2C /* MostSharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSharedViewController.swift; sourceTree = "<group>"; };
+		BE13641F2A1385B400096C2C /* MostViewedViewedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewedViewedController.swift; sourceTree = "<group>"; };
+		BE1364212A13863000096C2C /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		BE1364242A138A2600096C2C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		BE1364262A13E2CD00096C2C /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		BE13642A2A13E7D200096C2C /* ArticlesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesResult.swift; sourceTree = "<group>"; };
+		BE13642D2A14125800096C2C /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		BE13642F2A154E1E00096C2C /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		BE2D22292A1366B8000B48B6 /* VRG Soft Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VRG Soft Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE2D222C2A1366B8000B48B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE2D222E2A1366B8000B48B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BE2D22302A1366B8000B48B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BE2D22332A1366B8000B48B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE2D22362A1366B8000B48B6 /* VRG_Soft_Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VRG_Soft_Test.xcdatamodel; sourceTree = "<group>"; };
 		BE2D22382A1366B9000B48B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE2D223B2A1366B9000B48B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE2D223D2A1366B9000B48B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA783AF1B1DCA1C5354D81FE /* Pods_VRG_Soft_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VRG_Soft_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED05281B1EF0103A57AD696B /* Pods-VRG Soft Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VRG Soft Test.release.xcconfig"; path = "Target Support Files/Pods-VRG Soft Test/Pods-VRG Soft Test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +51,76 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D1179412CF58974B105CA3 /* Pods_VRG_Soft_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A7CDDD4B00F26A781A371A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				80566FC8C6D96163F143458B /* Pods-VRG Soft Test.debug.xcconfig */,
+				ED05281B1EF0103A57AD696B /* Pods-VRG Soft Test.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8F8EE942A7EEB141CD8A57B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA783AF1B1DCA1C5354D81FE /* Pods_VRG_Soft_Test.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE1364232A13864200096C2C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE1364242A138A2600096C2C /* TabBarController.swift */,
+				BE13641B2A13854C00096C2C /* MostEmailedViewController.swift */,
+				BE13641D2A13858A00096C2C /* MostSharedViewController.swift */,
+				BE13641F2A1385B400096C2C /* MostViewedViewedController.swift */,
+				BE1364212A13863000096C2C /* FavoritesViewController.swift */,
+				BE13642F2A154E1E00096C2C /* ArticleDetailViewController.swift */,
+				BE13642C2A14124100096C2C /* Cells */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BE1364282A13E56800096C2C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				BE1364292A13E57500096C2C /* Models */,
+				BE1364262A13E2CD00096C2C /* ApiManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		BE1364292A13E57500096C2C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE13642A2A13E7D200096C2C /* ArticlesResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE13642C2A14124100096C2C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BE13642D2A14125800096C2C /* ArticleTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BE2D22202A1366B8000B48B6 = {
 			isa = PBXGroup;
 			children = (
 				BE2D222B2A1366B8000B48B6 /* VRG Soft Test */,
 				BE2D222A2A1366B8000B48B6 /* Products */,
+				5A7CDDD4B00F26A781A371A1 /* Pods */,
+				8F8EE942A7EEB141CD8A57B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +137,8 @@
 			children = (
 				BE2D222C2A1366B8000B48B6 /* AppDelegate.swift */,
 				BE2D222E2A1366B8000B48B6 /* SceneDelegate.swift */,
-				BE2D22302A1366B8000B48B6 /* ViewController.swift */,
-				BE2D22322A1366B8000B48B6 /* Main.storyboard */,
+				BE1364282A13E56800096C2C /* API */,
+				BE1364232A13864200096C2C /* ViewControllers */,
 				BE2D22382A1366B9000B48B6 /* Assets.xcassets */,
 				BE2D223A2A1366B9000B48B6 /* LaunchScreen.storyboard */,
 				BE2D223D2A1366B9000B48B6 /* Info.plist */,
@@ -77,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE2D22402A1366B9000B48B6 /* Build configuration list for PBXNativeTarget "VRG Soft Test" */;
 			buildPhases = (
+				31744E9F73F6E33ACAB84F50 /* [CP] Check Pods Manifest.lock */,
 				BE2D22252A1366B8000B48B6 /* Sources */,
 				BE2D22262A1366B8000B48B6 /* Frameworks */,
 				BE2D22272A1366B8000B48B6 /* Resources */,
+				055C562DE068E3AE0475C170 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,19 +209,68 @@
 			files = (
 				BE2D223C2A1366B9000B48B6 /* LaunchScreen.storyboard in Resources */,
 				BE2D22392A1366B9000B48B6 /* Assets.xcassets in Resources */,
-				BE2D22342A1366B8000B48B6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		055C562DE068E3AE0475C170 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VRG Soft Test/Pods-VRG Soft Test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VRG Soft Test/Pods-VRG Soft Test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VRG Soft Test/Pods-VRG Soft Test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31744E9F73F6E33ACAB84F50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VRG Soft Test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE2D22252A1366B8000B48B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE2D22312A1366B8000B48B6 /* ViewController.swift in Sources */,
+				BE13641E2A13858A00096C2C /* MostSharedViewController.swift in Sources */,
+				BE1364272A13E2CD00096C2C /* ApiManager.swift in Sources */,
+				BE1364302A154E1E00096C2C /* ArticleDetailViewController.swift in Sources */,
+				BE13642B2A13E7D200096C2C /* ArticlesResult.swift in Sources */,
+				BE1364252A138A2600096C2C /* TabBarController.swift in Sources */,
+				BE1364202A1385B400096C2C /* MostViewedViewedController.swift in Sources */,
+				BE1364222A13863000096C2C /* FavoritesViewController.swift in Sources */,
+				BE13642E2A14125800096C2C /* ArticleTableViewCell.swift in Sources */,
 				BE2D222D2A1366B8000B48B6 /* AppDelegate.swift in Sources */,
+				BE13641C2A13854C00096C2C /* MostEmailedViewController.swift in Sources */,
 				BE2D222F2A1366B8000B48B6 /* SceneDelegate.swift in Sources */,
 				BE2D22372A1366B8000B48B6 /* VRG_Soft_Test.xcdatamodeld in Sources */,
 			);
@@ -151,14 +279,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BE2D22322A1366B8000B48B6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE2D22332A1366B8000B48B6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BE2D223A2A1366B9000B48B6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,6 +406,7 @@
 		};
 		BE2D22412A1366B9000B48B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80566FC8C6D96163F143458B /* Pods-VRG Soft Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -296,9 +417,9 @@
 				INFOPLIST_FILE = "VRG Soft Test/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,6 +435,7 @@
 		};
 		BE2D22422A1366B9000B48B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED05281B1EF0103A57AD696B /* Pods-VRG Soft Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -324,9 +446,9 @@
 				INFOPLIST_FILE = "VRG Soft Test/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
