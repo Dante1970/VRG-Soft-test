@@ -8,61 +8,6 @@
 import Foundation
 import Alamofire
 
-// MARK: - ApiType
-
-enum ApiType {
-    case mostEmailed(days: Days)
-    case mostShared(days: Days)
-    case mostViewed(days: Days)
-    
-    enum Days {
-        case lastDay
-        case lastWeek
-        case lastMonth
-        
-        var value: Int {
-            switch self {
-            case .lastDay: return 1
-            case .lastWeek: return 7
-            case .lastMonth: return 30
-            }
-        }
-    }
-    
-    var section: String {
-        switch self {
-        case .mostEmailed: return "emailed"
-        case .mostShared: return "shared"
-        case .mostViewed: return "viewed"
-        }
-    }
-    
-    var days: Days {
-        switch self {
-        case .mostEmailed(let days): return days
-        case .mostShared(let days): return days
-        case .mostViewed(let days): return days
-        }
-    }
-}
-
-// MARK: - ErrorManager
-
-enum ErrorManager: Error {
-    case errorDecode
-    case resultsIsNil
-}
-
-// MARK: - PictureSize
-
-enum PictureSize: Int {
-    case small = 0
-    case medium = 1
-    case big = 2
-}
-
-// MARK: - ApiManager
-
 class ApiManager {
     
     // MARK: - Properties
@@ -75,6 +20,7 @@ class ApiManager {
     
     // MARK: - Public Methods
     
+    // Get articles for the given API type
     func getArticles(for apiType: ApiType, completion: @escaping (Result<[Article], Error>) -> ()) {
         
         let urlString = "\(baseURL)/\(apiType.section)/\(apiType.days.value).json?api-key=\(apiKey)"
@@ -102,6 +48,7 @@ class ApiManager {
             }
     }
     
+    // Get the image for the article with the specified size
     func getImage(from article: Article?, pictureSize: PictureSize, completion: @escaping (UIImage) -> ()) {
         
         guard let url = validationImageURL(for: article, pictureSize: pictureSize) else {
@@ -124,7 +71,7 @@ class ApiManager {
         }
     }
 
-    
+    // Validate and retrieve the image URL for the article and picture size
     func validationImageURL(for article: Article?, pictureSize: PictureSize) -> String? {
         
         if let article = article,

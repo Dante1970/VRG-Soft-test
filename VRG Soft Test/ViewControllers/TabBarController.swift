@@ -9,6 +9,9 @@ import UIKit
 
 final class TabBarController: UITabBarController {
     
+    // MARK: - enum TabBarItem
+    
+    // Enumeration representing tab bar items
     private enum TabBarItem: Int {
         case mostEmailed
         case mostShared
@@ -16,6 +19,7 @@ final class TabBarController: UITabBarController {
         case favorites
         
         var title: String {
+            // Return the title for each tab bar item
             switch self {
             case .mostEmailed:
                 return "Most Emailed"
@@ -29,6 +33,7 @@ final class TabBarController: UITabBarController {
         }
         
         var iconName: String {
+            // Return the system name of the icon for each tab bar item
             switch self {
             case .mostEmailed:
                 return "envelope.fill"
@@ -41,17 +46,23 @@ final class TabBarController: UITabBarController {
             }
         }
     }
-
+    
+    // MARK: - viewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Set up the tab bar
         self.setupTabBar()
     }
+    
+    // MARK: - Private Methods
     
     private func setupTabBar() {
         
         let dataSource: [TabBarItem] = [.mostEmailed, .mostShared, .mostViewed, .favorites]
         
+        // Create view controllers for each tab bar item
         self.viewControllers = dataSource.map {
             
             switch $0 {
@@ -73,6 +84,7 @@ final class TabBarController: UITabBarController {
             }
         }
         
+        // Set tab bar item titles and icons for each view controller
         self.viewControllers?.enumerated().forEach {
             $1.tabBarItem.title = dataSource[$0].title
             $1.tabBarItem.image = UIImage(systemName: dataSource[$0].iconName)
@@ -81,6 +93,7 @@ final class TabBarController: UITabBarController {
     }
     
     private func wrappedInNavigationController(with: UIViewController, title: String) -> UINavigationController {
+        // Wrap a view controller in a navigation controller
         return UINavigationController(rootViewController: with)
     }
 }

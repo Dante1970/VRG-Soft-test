@@ -9,27 +9,19 @@ import Foundation
 import CoreData
 import UIKit
 
-// MARK: - FavoriteCategories
-
-enum FavoriteCategories: String {
-    case mostEmailed = "Most Emailed"
-    case mostShared = "Most Shared"
-    case mostViewed = "Most Viewed"
-}
-
-// MARK: - CoreDataManager
-
 final class CoreDataManager {
     
     // MARK: - Properties
     
     static let shared = CoreDataManager()
     
+    // Instances for accessing the Core Data context
     private lazy var appDelegate = UIApplication.shared.delegate as! AppDelegate
     private lazy var context = appDelegate.persistentContainer.viewContext
     
     // MARK: - Public Methods
     
+    // Save an article to favorites
     func saveToFavorites(article: Article, imageSmall: UIImage?, imageBig: UIImage?, category: FavoriteCategories) {
         
         let entity = NSEntityDescription.entity(forEntityName: "ArticleEntity", in: context)
@@ -50,6 +42,7 @@ final class CoreDataManager {
         }
     }
     
+    // Delete an article from favorites
     func deleteFromFavorites(url: String?) {
         
         guard let url = url else {
@@ -73,6 +66,7 @@ final class CoreDataManager {
         }
     }
     
+    // Get the list of articles from favorites
     func getFavoritesArticles() -> [ArticleEntity] {
         
         var articlesEntity: [ArticleEntity] = []
@@ -89,6 +83,7 @@ final class CoreDataManager {
         return articlesEntity
     }
     
+    // Get an image from an article
     func getImage(from articleEntity: ArticleEntity?, pictureSize: PictureSize, completion: @escaping (UIImage?) -> ()) {
         
         let imageData: Data?
@@ -108,6 +103,7 @@ final class CoreDataManager {
         completion(image)
     }
     
+    // Check if an article is in favorites
     func isInFavorites(url: String?, completion: @escaping (Bool) -> ()) {
         
         guard let url = url else {
@@ -131,7 +127,8 @@ final class CoreDataManager {
         }
     }
     
-    func toggleFavoriteState(for article: Article, category: FavoriteCategories) {
+    // Toggle the state of adding/deleting an article from favorites
+    func toggleFavoriteState(for article: Article, category: FavoriteCategories, completion: @escaping () -> ()) {
         let url = article.url
 
         ApiManager.shared.getImage(from: article, pictureSize: .small) { [weak self] imageSmall in
@@ -142,8 +139,10 @@ final class CoreDataManager {
                     if let self = self {
                         if result {
                             self.deleteFromFavorites(url: url)
+                            completion()
                         } else {
                             self.saveToFavorites(article: article, imageSmall: imageSmall, imageBig: imageBig, category: category)
+                            completion()
                         }
                     }
                 }

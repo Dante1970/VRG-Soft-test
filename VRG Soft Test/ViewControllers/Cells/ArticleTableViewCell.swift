@@ -18,6 +18,9 @@ class ArticleTableViewCell: UITableViewCell {
 
     static let identifier = "ArticleTableViewCell"
     
+    var isInFavorites: Bool = false
+    var dataType: DataType?
+    
     var article: Article? {
         willSet(newArticle) {
             
@@ -28,6 +31,11 @@ class ArticleTableViewCell: UITableViewCell {
         }
     }
     
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .white)
+        return indicator
+    }()
+    
     var articleEntity: ArticleEntity? {
         willSet(newArticleEntity) {
             
@@ -37,9 +45,6 @@ class ArticleTableViewCell: UITableViewCell {
             dataType = .coreData
         }
     }
-    
-    var isInFavorites: Bool = false
-    var dataType: DataType?
     
     let mainImageView: UIImageView = {
         let imageView = UIImageView()
@@ -85,25 +90,30 @@ class ArticleTableViewCell: UITableViewCell {
             print("Error! No dataType in cell.")
             return
         }
-
+        
+        activityIndicator.startAnimating()
+        
         switch dataType {
         case .apiData:
             ApiManager.shared.getImage(from: article, pictureSize: pictureSize) { [weak self] image in
                 guard let self = self else { return }
                 
                 self.mainImageView.image = image
+                self.activityIndicator.stopAnimating()
             }
         case .coreData:
             CoreDataManager.shared.getImage(from: articleEntity, pictureSize: pictureSize) { [weak self] image in
                 guard let self = self else { return }
                 
                 self.mainImageView.image = image
+                self.activityIndicator.stopAnimating()
             }
         }
     }
     
     private func makeUI() {
         contentView.addSubview(mainImageView)
+        mainImageView.addSubview(activityIndicator)
         contentView.addSubview(titleLabel)
         
         setupConstraints()
@@ -111,6 +121,7 @@ class ArticleTableViewCell: UITableViewCell {
     
     private func setupConstraints() {
         mainImageView.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let padding: CGFloat = 5
@@ -122,6 +133,9 @@ class ArticleTableViewCell: UITableViewCell {
             mainImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding),
             mainImageView.widthAnchor.constraint(equalToConstant: mainImageViewSize),
             mainImageView.heightAnchor.constraint(equalToConstant: mainImageViewSize),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: mainImageView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: mainImageView.centerYAnchor),
             
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: mainImageView.trailingAnchor, constant: padding + 10),

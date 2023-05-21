@@ -41,9 +41,13 @@ class MostEmailedViewController: UIViewController {
     // MARK: - Private Methods
     
     private func toggleFavoriteState(for cell: ArticleTableViewCell, at indexPath: IndexPath) {
+        // Toggle the favorite state for the article and update the table view
         let article = self.articles[indexPath.row]
         
-        CoreDataManager.shared.toggleFavoriteState(for: article, category: .mostEmailed)
+        CoreDataManager.shared.toggleFavoriteState(for: article, category: .mostEmailed) { [weak self] in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }
     }
     
     private func getMostEmailedArticles() {
@@ -83,11 +87,7 @@ extension MostEmailedViewController: UITableViewDelegate, UITableViewDataSource 
         
         let url = articles[indexPath.row].url
         CoreDataManager.shared.isInFavorites(url: url) { result in
-            if result {
-                cell.isInFavorites = true
-            } else {
-                cell.isInFavorites = false
-            }
+            cell.isInFavorites = result
         }
         
         cell.article = articles[indexPath.row]
@@ -115,7 +115,6 @@ extension MostEmailedViewController: UITableViewDelegate, UITableViewDataSource 
         let swipeFavorite = UIContextualAction(style: .normal, title: nil) { [weak self] action, view, success in
             guard let self = self else { return }
             self.toggleFavoriteState(for: cell, at: indexPath)
-            self.tableView.reloadData()
         }
         
         swipeFavorite.image = cell.isInFavorites ? imageBookmarkFill : imageBookmark

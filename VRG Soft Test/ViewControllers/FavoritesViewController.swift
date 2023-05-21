@@ -28,7 +28,7 @@ class FavoritesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        view.addSubview(tableView)
+        makeUI()
     }
     
     // MARK: - viewWillAppear
@@ -40,6 +40,13 @@ class FavoritesViewController: UIViewController {
     }
     
     // MARK: - Private Methods
+    
+    private func makeUI() {
+        navigationController!.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Most Favorites"
+        
+        view.addSubview(tableView)
+    }
     
     private func deleteFromFavorites(for cell: ArticleTableViewCell, at indexPath: IndexPath) {
         
@@ -80,6 +87,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.identifier, for: indexPath) as! ArticleTableViewCell
         
         let articleEntity = getArticleEntity(for: indexPath)
@@ -109,6 +117,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         
         let swipeFavorite = UIContextualAction(style: .normal, title: nil) { [weak self] action, view, success in
             guard let self = self else { return }
+            
             self.deleteFromFavorites(for: cell, at: indexPath)
             self.tableView.reloadData()
         }

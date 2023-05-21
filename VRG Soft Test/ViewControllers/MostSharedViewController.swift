@@ -43,15 +43,18 @@ class MostSharedViewController: UIViewController {
     private func toggleFavoriteState(for cell: ArticleTableViewCell, at indexPath: IndexPath) {
         let article = self.articles[indexPath.row]
         
-        CoreDataManager.shared.toggleFavoriteState(for: article, category: .mostShared)
+        CoreDataManager.shared.toggleFavoriteState(for: article, category: .mostShared) { [weak self] in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }
     }
     
     private func getMostSharedArticles() {
         
         ApiManager.shared.getArticles(for: .mostShared(days: .lastMonth)) { result in
             switch result {
-            case .success(let mostEmailedArticles):
-                self.articles = mostEmailedArticles
+            case .success(let mostSharedArticles):
+                self.articles = mostSharedArticles
                 self.tableView.reloadData()
                 
             case .failure(let error):
@@ -84,11 +87,7 @@ extension MostSharedViewController: UITableViewDelegate, UITableViewDataSource {
         
         let url = articles[indexPath.row].url
         CoreDataManager.shared.isInFavorites(url: url) { result in
-            if result {
-                cell.isInFavorites = true
-            } else {
-                cell.isInFavorites = false
-            }
+            cell.isInFavorites = result
         }
         
         cell.article = articles[indexPath.row]
@@ -116,7 +115,6 @@ extension MostSharedViewController: UITableViewDelegate, UITableViewDataSource {
         let swipeFavorite = UIContextualAction(style: .normal, title: nil) { [weak self] action, view, success in
             guard let self = self else { return }
             self.toggleFavoriteState(for: cell, at: indexPath)
-            self.tableView.reloadData()
         }
         
         swipeFavorite.image = cell.isInFavorites ? imageBookmarkFill : imageBookmark

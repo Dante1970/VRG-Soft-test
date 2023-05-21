@@ -121,16 +121,6 @@ class ArticleDetailViewController: UIViewController {
         }
     }
     
-//    private func getImage(for article: Article?, pictureSize: PictureSize) {
-//
-//        ApiManager.shared.getImage(from: article, pictureSize: pictureSize) { [weak self] image in
-//
-//            guard let self = self else { return }
-//
-//            self.mainImageView.image = image
-//        }
-//    }
-    
     private func makeUI() {
         view.backgroundColor = .systemBackground
         

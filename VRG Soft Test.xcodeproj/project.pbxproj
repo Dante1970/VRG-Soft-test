@@ -25,6 +25,10 @@
 		BE3E33392A1785C200FD777D /* ArticleEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E33372A1785C200FD777D /* ArticleEntity+CoreDataClass.swift */; };
 		BE3E333A2A1785C200FD777D /* ArticleEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E33382A1785C200FD777D /* ArticleEntity+CoreDataProperties.swift */; };
 		BE3E333C2A17867D00FD777D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E333B2A17867D00FD777D /* CoreDataManager.swift */; };
+		BE3E333F2A1A5D1300FD777D /* ApiType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E333E2A1A5D1300FD777D /* ApiType.swift */; };
+		BE3E33412A1A5D4700FD777D /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E33402A1A5D4700FD777D /* ErrorManager.swift */; };
+		BE3E33432A1A5D6200FD777D /* PictureSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E33422A1A5D6200FD777D /* PictureSize.swift */; };
+		BE3E33452A1A5E1600FD777D /* FavoriteCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E33442A1A5E1600FD777D /* FavoriteCategories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		BE3E33372A1785C200FD777D /* ArticleEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArticleEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BE3E33382A1785C200FD777D /* ArticleEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArticleEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BE3E333B2A17867D00FD777D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		BE3E333E2A1A5D1300FD777D /* ApiType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiType.swift; sourceTree = "<group>"; };
+		BE3E33402A1A5D4700FD777D /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		BE3E33422A1A5D6200FD777D /* PictureSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureSize.swift; sourceTree = "<group>"; };
+		BE3E33442A1A5E1600FD777D /* FavoriteCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCategories.swift; sourceTree = "<group>"; };
 		EA783AF1B1DCA1C5354D81FE /* Pods_VRG_Soft_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VRG_Soft_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED05281B1EF0103A57AD696B /* Pods-VRG Soft Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VRG Soft Test.release.xcconfig"; path = "Target Support Files/Pods-VRG Soft Test/Pods-VRG Soft Test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +154,7 @@
 				BE1364282A13E56800096C2C /* API */,
 				BE3E32EF2A16CF0600FD777D /* CoreData */,
 				BE1364232A13864200096C2C /* ViewControllers */,
+				BE3E333D2A1A5CEE00FD777D /* Enums */,
 				BE2D22382A1366B9000B48B6 /* Assets.xcassets */,
 				BE2D223A2A1366B9000B48B6 /* LaunchScreen.storyboard */,
 				BE2D223D2A1366B9000B48B6 /* Info.plist */,
@@ -162,6 +171,17 @@
 				BE3E32F12A16CF1F00FD777D /* VRG_Soft_Test.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		BE3E333D2A1A5CEE00FD777D /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				BE3E333E2A1A5D1300FD777D /* ApiType.swift */,
+				BE3E33402A1A5D4700FD777D /* ErrorManager.swift */,
+				BE3E33422A1A5D6200FD777D /* PictureSize.swift */,
+				BE3E33442A1A5E1600FD777D /* FavoriteCategories.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,9 +299,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE13641E2A13858A00096C2C /* MostSharedViewController.swift in Sources */,
+				BE3E33412A1A5D4700FD777D /* ErrorManager.swift in Sources */,
 				BE1364272A13E2CD00096C2C /* ApiManager.swift in Sources */,
 				BE1364302A154E1E00096C2C /* ArticleDetailViewController.swift in Sources */,
 				BE3E333C2A17867D00FD777D /* CoreDataManager.swift in Sources */,
+				BE3E333F2A1A5D1300FD777D /* ApiType.swift in Sources */,
 				BE13642B2A13E7D200096C2C /* ArticlesResult.swift in Sources */,
 				BE1364252A138A2600096C2C /* TabBarController.swift in Sources */,
 				BE1364202A1385B400096C2C /* MostViewedController.swift in Sources */,
@@ -289,6 +311,8 @@
 				BE13642E2A14125800096C2C /* ArticleTableViewCell.swift in Sources */,
 				BE3E33392A1785C200FD777D /* ArticleEntity+CoreDataClass.swift in Sources */,
 				BE2D222D2A1366B8000B48B6 /* AppDelegate.swift in Sources */,
+				BE3E33432A1A5D6200FD777D /* PictureSize.swift in Sources */,
+				BE3E33452A1A5E1600FD777D /* FavoriteCategories.swift in Sources */,
 				BE13641C2A13854C00096C2C /* MostEmailedViewController.swift in Sources */,
 				BE3E333A2A1785C200FD777D /* ArticleEntity+CoreDataProperties.swift in Sources */,
 				BE2D222F2A1366B8000B48B6 /* SceneDelegate.swift in Sources */,
