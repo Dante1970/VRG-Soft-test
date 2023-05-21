@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum DataType {
+    case apiData
+    case coreData
+}
+
 class ArticleTableViewCell: UITableViewCell {
     
     // MARK: - Properties
@@ -19,10 +24,24 @@ class ArticleTableViewCell: UITableViewCell {
             guard let newArticle = newArticle else { return }
             
             titleLabel.text = newArticle.title
+            dataType = .apiData
         }
     }
     
-    private let mainImageView: UIImageView = {
+    var articleEntity: ArticleEntity? {
+        willSet(newArticleEntity) {
+            
+            guard let newArticleEntity = newArticleEntity else { return }
+            
+            titleLabel.text = newArticleEntity.title
+            dataType = .coreData
+        }
+    }
+    
+    var isInFavorites: Bool = false
+    var dataType: DataType?
+    
+    let mainImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .darkGray
         imageView.layer.cornerRadius = 20
@@ -47,7 +66,7 @@ class ArticleTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         makeUI()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -55,18 +74,31 @@ class ArticleTableViewCell: UITableViewCell {
     // MARK: - LayoutSubviews
     
     override func layoutSubviews() {
-        getImageForCell(from: article, pictureSize: .small)
+        getImageForCell(dataType: dataType, pictureSize: .small)
     }
     
     // MARK: - Private Methods
     
-    private func getImageForCell(from article: Article?, pictureSize: PictureSize) {
+    private func getImageForCell(dataType: DataType?, pictureSize: PictureSize) {
         
-        ApiManager.shared.getImage(from: article, pictureSize: pictureSize) { [weak self] image in
-            
-            guard let self = self else { return }
-            
-            self.mainImageView.image = image
+        guard let dataType = dataType else {
+            print("Error! No dataType in cell.")
+            return
+        }
+
+        switch dataType {
+        case .apiData:
+            ApiManager.shared.getImage(from: article, pictureSize: pictureSize) { [weak self] image in
+                guard let self = self else { return }
+                
+                self.mainImageView.image = image
+            }
+        case .coreData:
+            CoreDataManager.shared.getImage(from: articleEntity, pictureSize: pictureSize) { [weak self] image in
+                guard let self = self else { return }
+                
+                self.mainImageView.image = image
+            }
         }
     }
     

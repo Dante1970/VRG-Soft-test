@@ -17,9 +17,22 @@ class ArticleDetailViewController: UIViewController {
             
             guard let newArticle = newArticle else { return }
             
+            self.url = newArticle.url
             sourceLabel.text = newArticle.updated
             titleLabel.text = newArticle.title
             abstractLabel.text = newArticle.abstract
+        }
+    }
+    
+    var articleEntity: ArticleEntity? {
+        willSet(newArticleEntity) {
+            
+            guard let newArticleEntity = newArticleEntity else { return }
+            
+            self.url = newArticleEntity.url
+            sourceLabel.text = newArticleEntity.updatedDate
+            titleLabel.text = newArticleEntity.title
+            abstractLabel.text = newArticleEntity.abstract
         }
     }
     
@@ -53,6 +66,8 @@ class ArticleDetailViewController: UIViewController {
         return label
     }()
     
+    private var url: String?
+    
     private lazy var stackViewLabels: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [sourceLabel, titleLabel, abstractLabel])
         stackView.axis = .vertical
@@ -73,7 +88,7 @@ class ArticleDetailViewController: UIViewController {
         super.viewDidLoad()
         
         makeUI()
-        getImage(for: article, pictureSize: .big)
+        getImage(for: article)
     }
     
     // MARK: - Private Methods
@@ -82,7 +97,7 @@ class ArticleDetailViewController: UIViewController {
     private func buttonTapped() {
         print("Tapped")
         
-        guard let articleURL = article?.url else { return }
+        guard let articleURL = url else { return }
 
         
         if let url = URL(string: articleURL) {
@@ -91,15 +106,30 @@ class ArticleDetailViewController: UIViewController {
         }
     }
     
-    private func getImage(for article: Article?, pictureSize: PictureSize) {
-
-        ApiManager.shared.getImage(from: article, pictureSize: pictureSize) { [weak self] image in
-            
-            guard let self = self else { return }
-            
-            self.mainImageView.image = image
+    private func getImage(for article: Article?) {
+        
+        if article != nil {
+            ApiManager.shared.getImage(from: article, pictureSize: .big) { [weak self] image in
+                guard let self = self else { return }
+                self.mainImageView.image = image
+            }
+        } else {
+            CoreDataManager.shared.getImage(from: articleEntity, pictureSize: .big) { [weak self] image in
+                guard let self = self else { return }
+                self.mainImageView.image = image
+            }
         }
     }
+    
+//    private func getImage(for article: Article?, pictureSize: PictureSize) {
+//
+//        ApiManager.shared.getImage(from: article, pictureSize: pictureSize) { [weak self] image in
+//
+//            guard let self = self else { return }
+//
+//            self.mainImageView.image = image
+//        }
+//    }
     
     private func makeUI() {
         view.backgroundColor = .systemBackground

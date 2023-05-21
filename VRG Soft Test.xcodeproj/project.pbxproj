@@ -10,7 +10,7 @@
 		A7D1179412CF58974B105CA3 /* Pods_VRG_Soft_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA783AF1B1DCA1C5354D81FE /* Pods_VRG_Soft_Test.framework */; };
 		BE13641C2A13854C00096C2C /* MostEmailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13641B2A13854C00096C2C /* MostEmailedViewController.swift */; };
 		BE13641E2A13858A00096C2C /* MostSharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13641D2A13858A00096C2C /* MostSharedViewController.swift */; };
-		BE1364202A1385B400096C2C /* MostViewedViewedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13641F2A1385B400096C2C /* MostViewedViewedController.swift */; };
+		BE1364202A1385B400096C2C /* MostViewedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13641F2A1385B400096C2C /* MostViewedController.swift */; };
 		BE1364222A13863000096C2C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1364212A13863000096C2C /* FavoritesViewController.swift */; };
 		BE1364252A138A2600096C2C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1364242A138A2600096C2C /* TabBarController.swift */; };
 		BE1364272A13E2CD00096C2C /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1364262A13E2CD00096C2C /* ApiManager.swift */; };
@@ -19,16 +19,19 @@
 		BE1364302A154E1E00096C2C /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13642F2A154E1E00096C2C /* ArticleDetailViewController.swift */; };
 		BE2D222D2A1366B8000B48B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2D222C2A1366B8000B48B6 /* AppDelegate.swift */; };
 		BE2D222F2A1366B8000B48B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2D222E2A1366B8000B48B6 /* SceneDelegate.swift */; };
-		BE2D22372A1366B8000B48B6 /* VRG_Soft_Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE2D22352A1366B8000B48B6 /* VRG_Soft_Test.xcdatamodeld */; };
 		BE2D22392A1366B9000B48B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE2D22382A1366B9000B48B6 /* Assets.xcassets */; };
 		BE2D223C2A1366B9000B48B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE2D223A2A1366B9000B48B6 /* LaunchScreen.storyboard */; };
+		BE3E32F32A16CF1F00FD777D /* VRG_Soft_Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE3E32F12A16CF1F00FD777D /* VRG_Soft_Test.xcdatamodeld */; };
+		BE3E33392A1785C200FD777D /* ArticleEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E33372A1785C200FD777D /* ArticleEntity+CoreDataClass.swift */; };
+		BE3E333A2A1785C200FD777D /* ArticleEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E33382A1785C200FD777D /* ArticleEntity+CoreDataProperties.swift */; };
+		BE3E333C2A17867D00FD777D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E333B2A17867D00FD777D /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		80566FC8C6D96163F143458B /* Pods-VRG Soft Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VRG Soft Test.debug.xcconfig"; path = "Target Support Files/Pods-VRG Soft Test/Pods-VRG Soft Test.debug.xcconfig"; sourceTree = "<group>"; };
 		BE13641B2A13854C00096C2C /* MostEmailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostEmailedViewController.swift; sourceTree = "<group>"; };
 		BE13641D2A13858A00096C2C /* MostSharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSharedViewController.swift; sourceTree = "<group>"; };
-		BE13641F2A1385B400096C2C /* MostViewedViewedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewedViewedController.swift; sourceTree = "<group>"; };
+		BE13641F2A1385B400096C2C /* MostViewedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewedController.swift; sourceTree = "<group>"; };
 		BE1364212A13863000096C2C /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		BE1364242A138A2600096C2C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BE1364262A13E2CD00096C2C /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -38,10 +41,13 @@
 		BE2D22292A1366B8000B48B6 /* VRG Soft Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VRG Soft Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE2D222C2A1366B8000B48B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE2D222E2A1366B8000B48B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BE2D22362A1366B8000B48B6 /* VRG_Soft_Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VRG_Soft_Test.xcdatamodel; sourceTree = "<group>"; };
 		BE2D22382A1366B9000B48B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE2D223B2A1366B9000B48B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE2D223D2A1366B9000B48B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE3E32F22A16CF1F00FD777D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		BE3E33372A1785C200FD777D /* ArticleEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArticleEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BE3E33382A1785C200FD777D /* ArticleEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArticleEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BE3E333B2A17867D00FD777D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		EA783AF1B1DCA1C5354D81FE /* Pods_VRG_Soft_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VRG_Soft_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED05281B1EF0103A57AD696B /* Pods-VRG Soft Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VRG Soft Test.release.xcconfig"; path = "Target Support Files/Pods-VRG Soft Test/Pods-VRG Soft Test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +87,7 @@
 				BE1364242A138A2600096C2C /* TabBarController.swift */,
 				BE13641B2A13854C00096C2C /* MostEmailedViewController.swift */,
 				BE13641D2A13858A00096C2C /* MostSharedViewController.swift */,
-				BE13641F2A1385B400096C2C /* MostViewedViewedController.swift */,
+				BE13641F2A1385B400096C2C /* MostViewedController.swift */,
 				BE1364212A13863000096C2C /* FavoritesViewController.swift */,
 				BE13642F2A154E1E00096C2C /* ArticleDetailViewController.swift */,
 				BE13642C2A14124100096C2C /* Cells */,
@@ -138,13 +144,24 @@
 				BE2D222C2A1366B8000B48B6 /* AppDelegate.swift */,
 				BE2D222E2A1366B8000B48B6 /* SceneDelegate.swift */,
 				BE1364282A13E56800096C2C /* API */,
+				BE3E32EF2A16CF0600FD777D /* CoreData */,
 				BE1364232A13864200096C2C /* ViewControllers */,
 				BE2D22382A1366B9000B48B6 /* Assets.xcassets */,
 				BE2D223A2A1366B9000B48B6 /* LaunchScreen.storyboard */,
 				BE2D223D2A1366B9000B48B6 /* Info.plist */,
-				BE2D22352A1366B8000B48B6 /* VRG_Soft_Test.xcdatamodeld */,
 			);
 			path = "VRG Soft Test";
+			sourceTree = "<group>";
+		};
+		BE3E32EF2A16CF0600FD777D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				BE3E333B2A17867D00FD777D /* CoreDataManager.swift */,
+				BE3E33372A1785C200FD777D /* ArticleEntity+CoreDataClass.swift */,
+				BE3E33382A1785C200FD777D /* ArticleEntity+CoreDataProperties.swift */,
+				BE3E32F12A16CF1F00FD777D /* VRG_Soft_Test.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,15 +281,18 @@
 				BE13641E2A13858A00096C2C /* MostSharedViewController.swift in Sources */,
 				BE1364272A13E2CD00096C2C /* ApiManager.swift in Sources */,
 				BE1364302A154E1E00096C2C /* ArticleDetailViewController.swift in Sources */,
+				BE3E333C2A17867D00FD777D /* CoreDataManager.swift in Sources */,
 				BE13642B2A13E7D200096C2C /* ArticlesResult.swift in Sources */,
 				BE1364252A138A2600096C2C /* TabBarController.swift in Sources */,
-				BE1364202A1385B400096C2C /* MostViewedViewedController.swift in Sources */,
+				BE1364202A1385B400096C2C /* MostViewedController.swift in Sources */,
 				BE1364222A13863000096C2C /* FavoritesViewController.swift in Sources */,
 				BE13642E2A14125800096C2C /* ArticleTableViewCell.swift in Sources */,
+				BE3E33392A1785C200FD777D /* ArticleEntity+CoreDataClass.swift in Sources */,
 				BE2D222D2A1366B8000B48B6 /* AppDelegate.swift in Sources */,
 				BE13641C2A13854C00096C2C /* MostEmailedViewController.swift in Sources */,
+				BE3E333A2A1785C200FD777D /* ArticleEntity+CoreDataProperties.swift in Sources */,
 				BE2D222F2A1366B8000B48B6 /* SceneDelegate.swift in Sources */,
-				BE2D22372A1366B8000B48B6 /* VRG_Soft_Test.xcdatamodeld in Sources */,
+				BE3E32F32A16CF1F00FD777D /* VRG_Soft_Test.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,12 +506,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BE2D22352A1366B8000B48B6 /* VRG_Soft_Test.xcdatamodeld */ = {
+		BE3E32F12A16CF1F00FD777D /* VRG_Soft_Test.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BE2D22362A1366B8000B48B6 /* VRG_Soft_Test.xcdatamodel */,
+				BE3E32F22A16CF1F00FD777D /* Model.xcdatamodel */,
 			);
-			currentVersion = BE2D22362A1366B8000B48B6 /* VRG_Soft_Test.xcdatamodel */;
+			currentVersion = BE3E32F22A16CF1F00FD777D /* Model.xcdatamodel */;
 			path = VRG_Soft_Test.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

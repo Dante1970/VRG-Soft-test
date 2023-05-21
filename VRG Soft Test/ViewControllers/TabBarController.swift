@@ -64,7 +64,7 @@ final class TabBarController: UITabBarController {
                 return self.wrappedInNavigationController(with: mostSharedViewController, title: $0.title)
                 
             case .mostViewed:
-                let mostViewedViewController = MostViewedViewedController()
+                let mostViewedViewController = MostViewedController()
                 return self.wrappedInNavigationController(with: mostViewedViewController, title: $0.title)
                 
             case .favorites:

@@ -19,6 +19,12 @@ class MostSharedViewController: UIViewController {
         return tableView
     }()
     
+    // MARK: - viewWillAppear
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     // MARK: - viewDidLoad
     
     override func viewDidLoad() {
@@ -33,6 +39,12 @@ class MostSharedViewController: UIViewController {
     }
     
     // MARK: - Private Methods
+    
+    private func toggleFavoriteState(for cell: ArticleTableViewCell, at indexPath: IndexPath) {
+        let article = self.articles[indexPath.row]
+        
+        CoreDataManager.shared.toggleFavoriteState(for: article, category: .mostShared)
+    }
     
     private func getMostSharedArticles() {
         
@@ -70,6 +82,15 @@ extension MostSharedViewController: UITableViewDelegate, UITableViewDataSource {
         
         guard let cell = cell else { return UITableViewCell() }
         
+        let url = articles[indexPath.row].url
+        CoreDataManager.shared.isInFavorites(url: url) { result in
+            if result {
+                cell.isInFavorites = true
+            } else {
+                cell.isInFavorites = false
+            }
+        }
+        
         cell.article = articles[indexPath.row]
         cell.accessoryType = .disclosureIndicator
         
@@ -87,10 +108,18 @@ extension MostSharedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let swipeFavorite = UIContextualAction(style: .normal, title: nil) { action, view, success in
-            print("add to favorite")
+        let cell = tableView.cellForRow(at: indexPath) as! ArticleTableViewCell
+        
+        let imageBookmarkFill = UIImage(systemName: "bookmark.fill")
+        let imageBookmark = UIImage(systemName: "bookmark")
+        
+        let swipeFavorite = UIContextualAction(style: .normal, title: nil) { [weak self] action, view, success in
+            guard let self = self else { return }
+            self.toggleFavoriteState(for: cell, at: indexPath)
+            self.tableView.reloadData()
         }
-        swipeFavorite.image = UIImage(systemName: "bookmark")
+        
+        swipeFavorite.image = cell.isInFavorites ? imageBookmarkFill : imageBookmark
         swipeFavorite.backgroundColor = .systemBlue
         
         return UISwipeActionsConfiguration(actions: [swipeFavorite])
